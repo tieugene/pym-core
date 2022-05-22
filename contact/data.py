@@ -9,8 +9,8 @@ Most interesting (see contents:dict):
 # 2. 3rd
 import vobject
 # 3. local
-from pym_core.base.data import VObj, EntryList, StoreList
-from pym_core import exc
+from base.data import VObj, EntryList, StoreList
+import exc
 from . import enums
 
 
