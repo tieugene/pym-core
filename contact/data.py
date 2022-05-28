@@ -64,13 +64,13 @@ class Contact(VObj):
         return ''
 
     def getEmailList(self) -> str:
-        """:todo: preferable or list"""
+        """:todo_board: preferable or list"""
         if email := self._data.contents.get('email'):
             return ", ".join([v.value for v in email])
         return ''
 
     def getTelList(self) -> str:
-        """:todo: preferable or list"""
+        """:todo_board: preferable or list"""
         if tel := self._data.contents.get('tel'):
             return ", ".join([v.value for v in tel])
         return ''

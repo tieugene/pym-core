@@ -36,7 +36,7 @@ class VObj(object):
 
 
 class Store(object):
-    """:todo: unload (before deletion)"""
+    """:todo_board: unload (before deletion)"""
     __name: str     # displayed name (uniq)
     __dpath: str    # directory path (uniq)
     __active: bool  # show/hide in StoreListView
@@ -172,6 +172,9 @@ class EntryList(object):
 
 
 class StoreList(object):
+    """Store list
+    :todo: items(): Iterator
+    """
     _item_cls: type  # successor-defined Store successor
     _entries: EntryList
     _list: list[Store]
@@ -185,12 +188,12 @@ class StoreList(object):
         return len(self._list)
 
     def from_list(self, data: list[dict]):
-        """:todo: error code"""
+        """:todo_board: error code"""
         for store in data:
             self.store_add(self._item_cls(store['name'], store['path'], store['active']))
 
     def to_list(self) -> list:
-        """:todo: error code"""
+        """:todo_board: error code"""
         return [store.as_dict() for store in self._list]
 
     def store_get(self, i: int) -> Optional[Store]:
@@ -198,7 +201,7 @@ class StoreList(object):
             return self._list[i]
 
     def store_add(self, store: Store):
-        """:todo: return something? e.g. index"""
+        """:todo_board: return something? e.g. index"""
         self._list.append(store)
 
     def store_del(self, i: int) -> bool:

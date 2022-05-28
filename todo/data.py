@@ -1,5 +1,5 @@
 """vToDo data provider
-:todo: field type enum
+:todo_board: field type enum
 """
 # 1. std
 import uuid
@@ -84,7 +84,7 @@ class TodoVObj(VObj):
 
     def RawContent(self) -> Optional[OrderedDict]:
         """Return inner item content as structure.
-        :todo: generator
+        :todo_board: generator
         """
 
         def __getFldByName(fld: str) -> Any:
@@ -121,7 +121,7 @@ class TodoVObj(VObj):
         - ['Cat1']
         - ['Cat1', 'Cat2', ...] (TB, not advised)
         - [['Cat1'], ['Cat2'], ...] (Evolution)
-        :todo: return set()
+        :todo_board: return set()
         """
         retvalue = [c.value for c in self._data.vtodo.categories_list]  # unpack #1
         if isinstance(retvalue[0], list):
