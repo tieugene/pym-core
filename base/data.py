@@ -6,7 +6,7 @@ import inspect
 import os
 from _collections import OrderedDict
 from enum import IntEnum, auto
-from typing import Optional
+from typing import Optional, Iterator
 # 2. 3rd
 import vobject
 # 3. local
@@ -151,6 +151,10 @@ class EntryList(object):
         self._list = []
         self.__ready = False
 
+    def items(self) -> Iterator[Entry]:
+        for entry in self._list:
+            yield entry
+
     def size(self) -> int:
         return len(self._list)
 
@@ -183,6 +187,10 @@ class StoreList(object):
         super().__init__()
         self._entries = entries
         self._list = []
+
+    def items(self) -> Iterator[Store]:
+        for store in self._list:
+            yield store
 
     def size(self) -> int:
         return len(self._list)
