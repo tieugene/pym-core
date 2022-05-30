@@ -116,6 +116,10 @@ class Entry(object):
         self._fname = fname
 
     @property
+    def id(self):
+        return id(self)
+
+    @property
     def store(self):
         return self._store
 
