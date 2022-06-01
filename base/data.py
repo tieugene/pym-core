@@ -178,6 +178,11 @@ class EntryList(object):
             return True
         return False
 
+    def entry_index(self, entry: Entry) -> Optional[int]:
+        """Find order no of entry"""
+        if self.size():
+            return self._list.index(entry)  # or raises a ValueError
+
 
 class StoreList(object):
     """Store list
